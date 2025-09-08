@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <div class="container mt-3">
+        <div class="card">
+            <div class="card-header">
+                <h5><i class=" fa-solid fa-calculator "></i>Itung-itungan</h5>
+            </div>
+            <div class="card-body">
+                <div class="mb-3">
+                    <label for="angkakapingpisan" class="form-label">Angka kaping pisan</label>
+                    <input type="number" class="form-control" id="angkakapingpisan"
+                        placeholder="Monggo mlebetaken angka">
+                </div>
+                <div class="card-body">
+                    <div class="mb-3">
+                        <label for="angkakapingpindo" class="form-label">Angka kaping pindo</label>
+                        <input type="number" class="form-control" id="angkakapingpindo"
+                            placeholder="Monggo mlebetaken angka">
+                    </div>
+                    <div class="row text-center">
+                        <div class="col">
+                            <button type="button" class="btn btn-danger" onclick="tambah()"><b>Tambah (+)</b></button>
+                            <button type="button" class="btn btn-warning" onclick="kurang()"><b>Kurang (-)</b></button>
+                            <button type="button" class="btn btn-success" onclick="kali()"><b>Kali (*)</b></button>
+                            <button type="button" class="btn btn-primary" onclick="bagi()"><b>Bagi (/)</b></button>
+                        </div>
+                    </div>
+                    <div class="row mt-5 text-center">
+                        <div class="col">
+                            <p id="hasil"></p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-5 text-center">
+                <div class="col">
+                    <small class="text-primary">
+                        Nama: Naufal Rakka Putra Hamijaya<br>
+                        NIM: 24/545428/SV/25682<br>
+                        Kelas: PGWEB A
+                        <br>
+                    </small>
+                    <p id="hasil"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+
+    <script>
+        //mengambil nilai dari input
+        var angka1 = document.getElementById("angkakapingpisan");
+        var angka2 = document.getElementById("angkakapingpindo");
+
+        //fungsi untuk penjumlahan
+        function tambah() {
+            var hasil_tambah = parseFloat(angka1.value) + parseFloat(angka2.value);
+            console.log(hasil_tambah);
+
+            //Menampilkan hasil ke elemen dengan id "hasil"
+            document.getElementById("hasil").innerHTML = "Hasil Penjumlahan: " + hasil_tambah;
+        }
+        //fungsi untuk pengurangan
+        function kurang() {
+            var hasil_kurang = parseFloat(angka1.value) - parseFloat(angka2.value);
+            console.log(hasil_kurang);
+
+            //Menampilkan hasil ke elemen dengan id "hasil"
+            document.getElementById("hasil").innerHTML = "Hasil Pengurangan: " + hasil_kurang;
+        }
+        //fungsi untuk perkalian
+        function kali() {
+            var hasil_kali = parseFloat(angka1.value) * parseFloat(angka2.value);
+            console.log(hasil_kali);
+
+            //Menampilkan hasil ke elemen dengan id "hasil"
+            document.getElementById("hasil").innerHTML = "Hasil Perkalian: " + hasil_kali;
+        }
+        //fungsi untuk pembagian
+        function bagi() {
+            var hasil_bagi = parseFloat(angka1.value) / parseFloat(angka2.value);
+            console.log(hasil_bagi);
+
+            //Menampilkan hasil ke elemen dengan id "hasil"
+            document.getElementById("hasil").innerHTML = "Hasil Pembagian: " + hasil_bagi;
+        }
+    </script>
+</body>
+
+</html>
